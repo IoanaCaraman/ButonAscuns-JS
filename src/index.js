@@ -1,11 +1,11 @@
 function handleForm() {
     event.preventDefault();
 
-    var input = document.getElementById("formInput");
-    var buttonsContainer = document.getElementById("buttonsContainer");
+    let input = document.getElementById("formInput");
+    let buttonsContainer = document.getElementById("buttonsContainer");
 
-    for(let i = 0; i < input.value; ++i) {
-        var button = document.createElement("button");
+    for (let i = 0; i < input.value; ++i) {
+        let button = document.createElement("button");
 
         button.classList.add("pressButton");
         buttonsContainer.appendChild(button);
@@ -15,14 +15,14 @@ function handleForm() {
 }
 
 function handleButtons() {
-    var buttons = document.getElementsByClassName("pressButton");
-    var winnerIndex = Math.floor(Math.random() * buttons.length);
+    let buttons = document.getElementsByClassName("pressButton");
+    let winnerIndex = Math.floor(Math.random() * buttons.length);
 
-    for(let i = 0; i < buttons.length; ++i) {
+    for (let i = 0; i < buttons.length; ++i) {
         buttons[i].addEventListener("click", function(){
-            if(this === buttons[winnerIndex]){
+            if (this === buttons[winnerIndex]){
                 this.textContent = "castigator";
-            }else {
+            } else {
                 this.textContent = "necastigator";
             }
         });
